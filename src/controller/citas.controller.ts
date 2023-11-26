@@ -7,13 +7,13 @@ export const getCitas: RequestHandler = async (req, res) => {
     const citas = await Cita.findAll()
 
     res.status(200).json({
-      message: 'Operación exitosa',
+      message: 'It has been carried out satisfactorily',
       data: citas
     })
   } catch (error) {
     const err = error as Error
     res.status(500).json({
-      message: 'Error al obtener las citas',
+      message: 'Error, could not get medical appointments',
       error: err.message
     })
   }
@@ -33,18 +33,18 @@ export const getOneCita: RequestHandler = async (req, res) => {
 
     if (cita){
       res.status(200).json({
-        message: 'Cita encontrada',
+        message: 'Medical appointment found',
         data: cita
       })
     } else {
       res.status(404).json({
-        message: 'Cita no encontrada'
+        message: 'Medical appointment not found'
       })
     }
 
   } catch (error:any) {
     res.status(500).json({
-      message: 'Error al obtener los doctores',
+      message: 'Error, could not get medical appointments',
       error: error.message
     })
   }
@@ -55,13 +55,13 @@ export const createCita: RequestHandler = async (req, res) => {
     const cita = await Cita.create(req.body)
 
     res.status(201).json({
-      message: 'Cita creada!',
+      message: 'Medical appointment created!',
       data: cita
     })
   } catch (error) {
     const err = error as Error;
     res.status(500).json({
-      message: 'No se pudo crear la cita',
+      message: 'Error, Medical appointment could not be created',
       error: err.message
     })
   }
@@ -88,16 +88,16 @@ export const updateCita: RequestHandler = async (req, res) => {
       }
     })
     res.status(200).json({
-      message: 'Cita actualizada'
+      message: 'Medical appointment correctly updated'
     })
     } else {
       res.status(404).json({
-        message: 'Cita no existe'
+        message: 'Medical appointment does not exist'
       })
     }
   } catch (error:any) {
     res.status(500).json({
-      message: 'Error al modificar la cita',
+      message: 'Error, medical appointment could not be modified',
       error: error.message
     })
   }
@@ -124,16 +124,16 @@ export const deleteCita: RequestHandler = async (req, res) => {
         }
       })
       res.status(200).json({
-        message: 'Cita eliminada'
+        message: 'Medical appointment deleted'
       })
     } else {
       res.status(404).json({
-        message: 'Cita no existe'
+        message: 'Medical appointment does not exist'
       })
     }
   } catch (error:any) {
     res.status(500).json({
-      message: 'Error al eliminar la cita',
+      message: 'Error, medical appointment could not be deleted',
       error: error.message
     })
   }

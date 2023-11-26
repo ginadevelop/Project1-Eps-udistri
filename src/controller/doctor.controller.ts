@@ -7,13 +7,13 @@ export const getDoctores: RequestHandler = async (req, res) => {
     const doctores = await Doctor.findAll()
 
       res.status(200).json({
-        message: 'Operación exitosa',
+        message: 'It has been carried out satisfactorily',
         data: doctores
       })
   } catch (error) {
     const err = error as Error
     res.status(500).json({
-      message: 'Error al obtener los doctores',
+      message: 'Error, could not get doctors',
       error: err.message
     })
   }
@@ -25,17 +25,17 @@ export const getDoctorById: RequestHandler = async (req, res) => {
 
     if(doctor) {
       res.status(200).json({
-        message: 'Doctor encontrado',
+        message: 'Doctor found',
         data: doctor
       })
     } else {
       res.status(404).json({
-        message: 'Doctor no encontrado'
+        message: 'Doctor not found'
       })
     }
   } catch (error:any) {
     res.status(500).json({
-      message: 'Error al obtener los doctores',
+      message: 'Error, could not get doctors',
       error: error.message
     })
   }
@@ -46,13 +46,13 @@ export const createDoctor: RequestHandler = async (req, res) => {
     const doctor = await Doctor.create(req.body)
 
     res.status(201).json({
-      message: 'Doctor creado!',
+      message: 'Doctor created!',
       data: doctor
     })
   } catch (error) {
     const err = error as Error;
     res.status(500).json({
-      message: 'No se pudo crear el doctor',
+      message: 'Error, Doctor could not be created',
       error: err.stack
     })
   }
@@ -69,16 +69,16 @@ export const updateDoctor: RequestHandler = async (req, res) => {
         }
       })
       res.status(200).json({
-        message: 'Doctor actualizado'
+        message: 'Doctor correctly updated'
       })
     } else {
       res.status(404).json({
-        message: 'Doctor no existe'
+        message: 'Doctor does not exist'
       })
     }
   } catch (error:any) {
     res.status(500).json({
-      message: 'Error al modificar el doctor',
+      message: 'Error, doctor could not be modified',
       error: error.message
     })
   }
@@ -95,16 +95,16 @@ export const deleteDoctor: RequestHandler = async (req, res) => {
         }
       })
       res.status(200).json({
-        message: 'Doctor eliminado'
+        message: 'Doctor deleted'
       })
     } else {
       res.status(404).json({
-        message: 'Doctor no existe'
+        message: 'Doctor does not exist'
       })
     }
   } catch (error:any) {
     res.status(500).json({
-      message: 'Error al eliminar el doctor',
+      message: 'Error, Doctor could not be deleted',
       error: error.message
     })
   }
