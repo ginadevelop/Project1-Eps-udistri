@@ -39,7 +39,7 @@ export class Doctor extends Model {
   telefono!: string
 
   @Column({
-    type: DataType.ENUM('medicina_interna', 'medicina_general'),
+    type: DataType.ENUM('medicina_interna', 'medicina_general', 'cardiologia','dermatologia', 'rehabilitacion', 'psicologia', 'odontologia', 'radiologia'),
     allowNull: false,
   })
   especialidad!: string
