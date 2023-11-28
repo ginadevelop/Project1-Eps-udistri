@@ -12,4 +12,4 @@
 
 # **ENTREGA PROYECTO 1**
 
-The tests carried out in postman are attached below, evidencing the functionality of the CRUD
+Below are the tests carried out on postman, evidencing the functionality of the CRUD. The technologies used for this Project are: Node JS, Express and TypeScript, and the database engine is MySQL.
