@@ -1,7 +1,7 @@
 {
   "name": "proyecto-ejemplo-clase",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "proyecto de grado Todos a la u",
   "main": "index.js",
   "scripts": {
     "start": "tsc && nodemon dist/app.js",

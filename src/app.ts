@@ -7,6 +7,8 @@ import dotenv from 'dotenv';
 import pacienteRoutes from './routes/paciente.routes'
 import doctorRoutes from './routes/doctor.routes'
 import citaRoutes from './routes/citas.routes'
+import consultorioRoutes from './routes/consultorio.routes'
+import especializacionRoutes  from './routes/especializacion.routes';
 
 dotenv.config();
 
@@ -24,7 +26,8 @@ app.get('/', (req: Request, res: Response) => {
 app.use('/api/pacientes', pacienteRoutes)
 app.use('/api/doctores', doctorRoutes)
 app.use('/api/citas', citaRoutes)
-
+app.use('/api/consultorio', consultorioRoutes)
+app.use('api/especializacion', especializacionRoutes)
 // Error de rutas
 app.use( (req: Request, res: Response) => {
   res.status(404).send('404: Page not found')
